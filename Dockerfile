@@ -19,8 +19,6 @@ RUN west init -l config \
     && west update \
     && west zephyr-export
 
-RUN mkdir -p build
-
 COPY bin/build.sh ./
 
 CMD ["./build.sh"]

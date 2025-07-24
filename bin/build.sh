@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-config_dir="${PWD}/config"
+base_dir="${PWD}/zmk-config"
+config_dir="${base_dir}/config"
 timestamp=$(date -u +"%Y%m%d%H%M%S")
 
 while IFS=$',' read -r board shield; do
     extra_cmake_args=${shield:+-DSHIELD="$shield"}
     artifact_name=${shield:+${shield// /-}-}${board}-zmk
-    filename="${PWD}/firmware/${timestamp}-${artifact_name}"
-    build_dir="${PWD}/build/${artifact_name}"
+    filename="${base_dir}/firmware/${timestamp}-${artifact_name}"
+    build_dir="${base_dir}/build/${artifact_name}"
 
     echo ""
     echo "-----------------"
@@ -20,7 +21,8 @@ while IFS=$',' read -r board shield; do
 
     if [[ ! -d "$build_dir" ]]; then
         west build -s zmk/app -b "$board" -d ${build_dir} -- \
-            -DZMK_CONFIG="$config_dir" "${extra_cmake_args}"
+            -DZMK_CONFIG="$config_dir" "${extra_cmake_args}" \
+            -DZMK_EXTRA_MODULES="$base_dir"
     else
         west build -d ${build_dir} -- -DZMK_CONFIG="$config_dir"
     fi

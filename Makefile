@@ -5,10 +5,8 @@ DOCKER := $(shell { command -v podman || command -v docker; })
 all:
 	$(DOCKER) build --tag zmk-build-user-config --build-arg USER_ID=$(shell id -u) .
 	$(DOCKER) run --rm -it --name zmk-build-user-config -u zmk \
-		-v $(PWD)/build:/app/build \
         -v $(PWD)/build.yaml:/app/build.yaml:ro \
-        -v $(PWD)/config:/app/config:ro \
-        -v $(PWD)/firmware:/app/firmware \
+        -v $(PWD):/app/zmk-config \
         -e OUTPUT_ZMK_CONFIG=$(OUTPUT_ZMK_CONFIG) \
         zmk-build-user-config
 

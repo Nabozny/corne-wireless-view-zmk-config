@@ -4,16 +4,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    behaviors {
-        // Bluetooth Reset Behavior - Clear all pairings and reset
-        bt_reset: bt_reset {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&bt BT_CLR>, <&bt BT_CLR_ALL>;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
         

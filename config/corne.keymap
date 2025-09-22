@@ -23,7 +23,7 @@
             require-prior-idle-ms = <100>;
         };
 
-        // Alternar entre USB/Bluetooth - A+S+D (lado esquerdo)
+        // Alternar TEMPORARIAMENTE para USB - A+S+D (padrão é sempre Bluetooth)
         output_toggle {
             bindings = <&out OUT_TOG>;
             key-positions = <10 11 12>;

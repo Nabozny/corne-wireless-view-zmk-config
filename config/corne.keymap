@@ -7,26 +7,26 @@
     combos {
         compatible = "zmk,combos";
         
-        // Reset Bluetooth LADO ESQUERDO - Q+W+E+R apaga TODAS as configurações BT do lado esquerdo
+        // Reset Bluetooth LADO ESQUERDO - Q+W+E+R (posições 1,2,3,4 com padding)
         bt_reset_left {
             bindings = <&bt BT_CLR_ALL>;
-            key-positions = <0 1 2 3>;
+            key-positions = <1 2 3 4>;
             timeout-ms = <3000>;
             require-prior-idle-ms = <100>;
         };
         
-        // Reset Bluetooth LADO DIREITO - P+O+I+U apaga TODAS as configurações BT do lado direito  
+        // Reset Bluetooth LADO DIREITO - P+O+I+U (posições 10,9,8,7 com padding)  
         bt_reset_right {
             bindings = <&bt BT_CLR_ALL>;
-            key-positions = <9 8 7 6>;
+            key-positions = <10 9 8 7>;
             timeout-ms = <3000>;
             require-prior-idle-ms = <100>;
         };
 
-        // Alternar TEMPORARIAMENTE para USB - A+S+D (padrão é sempre Bluetooth)
+        // Alternar TEMPORARIAMENTE para USB - A+S+D (posições 13,14,15 com padding)
         output_toggle {
             bindings = <&out OUT_TOG>;
-            key-positions = <10 11 12>;
+            key-positions = <13 14 15>;
             timeout-ms = <2000>;
             require-prior-idle-ms = <100>;
         };
@@ -35,32 +35,32 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // Base QWERTY Layer (5x3)
+        // Base QWERTY Layer (5x3) com padding para shield 6x3
         default_layer {
             bindings = <
-                &kp Q         &kp W         &kp E         &kp R         &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P
-                &kp A         &kp S         &kp D         &kp F         &kp G         &kp H         &kp J         &kp K         &kp L         &kp SEMI
-                &kp Z         &kp X         &kp C         &kp V         &kp B         &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH
+                &none         &kp Q         &kp W         &kp E         &kp R              &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &none
+                &none         &kp A         &kp S         &kp D         &kp F              &kp G         &kp H         &kp J         &kp K         &kp L         &kp SEMI      &none
+                &none         &kp Z         &kp X         &kp C         &kp V              &kp B         &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH     &none
                                             &mo 1         &kp LGUI      &mt LSHFT SPACE    &kp BSPC      &kp RET       &mo 2
             >;
         };
 
-        // Numbers/Navigation Layer (5x3)
+        // Numbers/Navigation Layer (5x3) com padding
         num_layer {
             bindings = <
-                &none         &kp LT        &kp LBRC      &kp LBKT      &kp LPAR      &kp SLASH     &kp N7        &kp N8        &kp N9        &kp MINUS
-                &none         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp STAR      &kp N4        &kp N5        &kp N6        &kp PLUS
-                &none         &kp RBRC      &kp RBKT      &kp RPAR      &kp GT        &kp N0        &kp N1        &kp N2        &kp N3        &kp RET
+                &none         &none         &kp LT        &kp LBRC      &kp LBKT      &kp LPAR      &kp SLASH     &kp N7        &kp N8        &kp N9        &kp MINUS     &none
+                &none         &none         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp STAR      &kp N4        &kp N5        &kp N6        &kp PLUS      &none
+                &none         &none         &kp RBRC      &kp RBKT      &kp RPAR      &kp GT        &kp N0        &kp N1        &kp N2        &kp N3        &kp RET       &none
                                             &none         &none         &none         &none         &none         &none
             >;
         };
 
-        // Symbols Layer (5x3)
+        // Symbols Layer (5x3) com padding
         sym_layer {
             bindings = <
-                &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
-                &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT   &kp CARET     &kp AMPS      &kp STAR      &kp LPAR      &kp RPAR
-                &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &none         &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH
+                &none         &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &none
+                &none         &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT   &kp CARET     &kp AMPS      &kp STAR      &kp LPAR      &kp RPAR      &none
+                &none         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &none         &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH      &none
                                             &trans        &trans        &trans        &trans        &trans        &trans
             >;
         };

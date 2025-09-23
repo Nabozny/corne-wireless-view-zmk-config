@@ -31,7 +31,7 @@
             require-prior-idle-ms = <100>;
         };
 
-        // Windows + Tab (Task View) - GUI+NUM+SPACE (posições 36,37,38 com padding)
+        // Windows + Tab (Task View) - GUI+NUM+SPACE (posições 3,4,5 com padding)
         win_tab_combo {
             bindings = <&kp LG(TAB)>;
             key-positions = <36 37 38>;

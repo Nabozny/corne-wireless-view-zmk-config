@@ -38,10 +38,10 @@
         // Base QWERTY Layer (5x3) com padding para shield 6x3
         default_layer {
             bindings = <
-                &none         &kp Q         &kp W         &kp E              &kp R              &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &none
-                &none         &kp A         &kp S         &kp D              &kp F              &kp G         &kp H         &kp J         &kp K         &kp L         &kp SEMI      &none
-                &none         &kp Z         &kp X         &kp C              &kp V              &kp B         &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH     &none
-                                            &mo 1         &kp CTRL LGUI      &mt LSHFT SPACE    &kp BSPC      &kp RET       &mo 2
+                &none         &kp Q         &kp W         &kp E         &kp R              &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &none
+                &none         &kp A         &kp S         &kp D         &kp F              &kp G         &kp H         &kp J         &kp K         &kp L         &kp SEMI      &none
+                &none         &kp Z         &kp X         &kp C         &kp V              &kp B         &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH     &none
+                                            &mo 1         &kp LGUI      &mt LSHFT SPACE    &kp BSPC      &kp RET       &mo 2
             >;
         };
 
@@ -51,7 +51,7 @@
                 &none         &none         &kp LT        &kp LBRC      &kp LBKT      &kp LPAR      &kp SLASH     &kp N7        &kp N8        &kp N9        &kp MINUS     &none
                 &none         &none         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp STAR      &kp N4        &kp N5        &kp N6        &kp PLUS      &none
                 &none         &none         &kp RBRC      &kp RBKT      &kp RPAR      &kp GT        &kp N0        &kp N1        &kp N2        &kp N3        &kp RET       &none
-                                            &none         &none         &none         &kp LSHIFT    &none         &none
+                                            &none         &none         &none         &none         &none         &none
             >;
         };
 

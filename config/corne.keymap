@@ -38,6 +38,14 @@
             timeout-ms = <2000>;
             require-prior-idle-ms = <100>;
         };
+        
+        // Enter (posições 38, 39)
+        win_tab_combo {
+            bindings = <&kp RET>;
+            key-positions = <38 39>;
+            timeout-ms = <2000>;
+            require-prior-idle-ms = <100>;
+        };
     };
 
     keymap {

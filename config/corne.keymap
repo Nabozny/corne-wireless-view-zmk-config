@@ -34,7 +34,7 @@
         // Windows + Tab (Task View) - GUI+NUM+SPACE (posições 3,4,5 com padding)
         win_tab_combo {
             bindings = <&kp LG(TAB)>;
-            key-positions = <36 37 38>;
+            key-positions = <3 4 5>;
             timeout-ms = <2000>;
             require-prior-idle-ms = <100>;
         };
@@ -46,10 +46,10 @@
         // Base QWERTY Layer (5x3) com padding para shield 6x3
         default_layer {
             bindings = <
-                &none         &kp Q         &kp W         &kp E         &kp R              &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &none
-                &none         &kp A         &kp S         &kp D         &kp F              &kp G         &kp H         &kp J         &kp K         &kp L         &kp SEMI      &none
-                &none         &kp Z         &kp X         &kp C         &kp V              &kp B         &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH     &none
-                                            &kp LGUI      &mo 1         &mt LSHFT SPACE    &kp BSPC      &mo 2         &kp LCTRL     
+                &none         &kp Q         &kp W             &kp E     &kp R              &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &none
+                &none         &kp A         &kp S             &kp D     &kp F              &kp G         &kp H         &kp J         &kp K         &kp L         &kp SEMI      &none
+                &none         &kp Z         &kp X             &kp C     &kp V              &kp B         &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH     &none
+                                            &mt LCTRL LGUI    &mo 1     &mt LSHFT SPACE    &kp BSPC      &mo 2         &kp LCTRL     
             >;
         };
 

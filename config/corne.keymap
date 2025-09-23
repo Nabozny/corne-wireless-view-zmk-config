@@ -1,68 +1,54 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-
-/ {
-    combos {
-        compatible = "zmk,combos";
-        
-        // Reset Bluetooth LADO ESQUERDO - Q+W+E+R (posições 1,2,3,4 com padding)
-        bt_reset_left {
-            bindings = <&bt BT_CLR_ALL>;
-            key-positions = <1 2 3 4>;
-            timeout-ms = <3000>;
-            require-prior-idle-ms = <100>;
-        };
-        
-        // Reset Bluetooth LADO DIREITO - P+O+I+U (posições 10,9,8,7 com padding)  
-        bt_reset_right {
-            bindings = <&bt BT_CLR_ALL>;
-            key-positions = <10 9 8 7>;
-            timeout-ms = <3000>;
-            require-prior-idle-ms = <100>;
-        };
-
-        // Alternar TEMPORARIAMENTE para USB - A+S+D (posições 13,14,15 com padding)
-        output_toggle {
-            bindings = <&out OUT_TOG>;
-            key-positions = <13 14 15>;
-            timeout-ms = <2000>;
-            require-prior-idle-ms = <100>;
-        };
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-        // Base QWERTY Layer (5x3) com padding para shield 6x3
-        default_layer {
-            bindings = <
-                &none         &kp Q         &kp W         &kp E         &kp R              &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &none
-                &none         &kp A         &kp S         &kp D         &kp F              &kp G         &kp H         &kp J         &kp K         &kp L         &kp SEMI      &none
-                &none         &kp Z         &kp X         &kp C         &kp V              &kp B         &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH     &none
-                                            &mo 1         &kp LGUI      &mt LSHFT SPACE    &kp BSPC      &kp RET       &mo 2
-            >;
-        };
-
-        // Numbers/Navigation Layer (5x3) com padding
-        num_layer {
-            bindings = <
-                &none         &none         &kp LT        &kp LBRC      &kp LBKT      &kp LPAR      &kp SLASH     &kp N7        &kp N8        &kp N9        &kp MINUS     &none
-                &none         &none         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp STAR      &kp N4        &kp N5        &kp N6        &kp PLUS      &none
-                &none         &none         &kp RBRC      &kp RBKT      &kp RPAR      &kp GT        &kp N0        &kp N1        &kp N2        &kp N3        &kp RET       &none
-                                            &none         &none         &none         &none         &none         &none
-            >;
-        };
-
-        // Symbols Layer (5x3) com padding
-        sym_layer {
-            bindings = <
-                &none         &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &none
-                &none         &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT   &kp CARET     &kp AMPS      &kp STAR      &kp LPAR      &kp RPAR      &none
-                &none         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &none         &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH      &none
-                                            &trans        &trans        &trans        &trans        &trans        &trans
-            >;
-        };
-    };
-};
+layout:
+  qmk_keyboard: corne_rotated
+  layout_name: LAYOUT_split_3x5_3
+layers:
+  DEF:
+    - [Q, W, E, R, T, Y, U, I, O, P]
+    - [{h: Ctrl, t: A}, {h: Gui, t: S}, {h: Alt, t: D}, {h: Shift, t: F}, G, H, {h: Shift, t: J}, {h: Alt, t: K}, {h: Gui, t: L}, {h: Ctrl, t: "'"}]
+    - [Z, X, C, V, B, N, M, ",", ., /]
+    - {h: Gui,   t: Tab, type: ghost}
+    - {h: Ctrl,  t: Esc}
+    - {h: NAV,   t: Space}
+    - {h: SYM,   t: BSpace}
+    - {h: Shift, t: Enter}
+    - {h: Alt,   t: Delete, type: ghost}
+  SYM:
+    - ["!", "@", "#", "$", "%", "\\", "7", "8", "9", ","]
+    - ["+", "=", "_", "-", "^", "0", "4", "5", "6", "."]
+    - [null, null, "¿", "*", "&", ";", "1", "2", "3", "/"]
+    - {t: Gui, type: ghost}
+    - Space
+    - {t: Bspace, h: FUN}
+    - {type: held}
+    - Shift
+    - {t: Alt, type: ghost}
+  NAV:
+    - ["Win Close", "Tab Prev", "Tab Next", "Tab Close", "Vol Up", Home, "Page Down", "Page Up", End, null]
+    - [Ctrl, Gui, Alt, {h: Shift, t: Tab}, "Vol Down", Left, Down, Up, Right, Calc]
+    - [null, "Win Prev", "Win Next", "Paste", "Play Pause", Insert, Delete, Prev, Next, null]
+    - {t: Gui, type: ghost}
+    - Ctrl
+    - {type: held}
+    - {t: Space, h: FUN}
+    - Shift
+    - {t: Alt, type: ghost}
+  FUN:
+    - [F1, F2, F3, F4, F5, "Caps Lock", null, DEF, CLM, GME]
+    - [F6, F7, F8, F9, F10, BT1, BT2, BT3, BT4, BT5]
+    - [null, "Desk Prev", "Desk Next", F11, F12, "Out USB", "Out BLE", "Print Scrn", "Pause Break", "BT CLR"]
+    - {t: Boot, type: ghost}
+    - Reset
+    - {type: held}
+    - {type: held}
+    - Reset
+    - {t: Boot, type: ghost}
+combos:
+  - {p: [22, 23], k: "`", l: ["DEF"]}
+  - {p: [21, 22], k: "~", l: ["DEF"]}
+  - {p: [6, 7],   k: ";", l: ["DEF"]}
+  - {p: [12, 13], k: "(", l: ["DEF"]}
+  - {p: [16, 17], k: ")", l: ["DEF"]}
+  - {p: [11, 12], k: "[", l: ["DEF"]}
+  - {p: [17, 18], k: "]", l: ["DEF"]}
+  - {p: [26, 27], k: "\\", l: ["DEF"]}
+  - {p: [27, 28], k: "|", l: ["DEF"]}

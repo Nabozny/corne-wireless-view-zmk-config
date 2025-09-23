@@ -51,7 +51,7 @@
                 &none         &none         &kp LT        &kp LBRC      &kp LBKT      &kp LPAR      &kp SLASH     &kp N7        &kp N8        &kp N9        &kp MINUS     &none
                 &none         &none         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp STAR      &kp N4        &kp N5        &kp N6        &kp PLUS      &none
                 &none         &none         &kp GT        &kp RBRC      &kp RBKT      &kp RPAR      &kp N0        &kp N1        &kp N2        &kp N3        &kp RET       &none
-                                            &trans        &trans        &kp CTRL      &kp LSHFT     &kp TAB       &trans
+                                            &trans        &trans        &kp LCTRL     &kp LSHFT     &kp TAB       &trans
             >;
         };
 

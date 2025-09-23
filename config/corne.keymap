@@ -39,10 +39,18 @@
             require-prior-idle-ms = <100>;
         };
         
-        // Enter (posições 38, 39)
-        win_tab_combo {
-            bindings = <&kp RET>;
-            key-positions = <38 39>;
+        // QUESTION button (posições 2, 39)
+        question_combo {
+            bindings = <&kp QMARK>;
+            key-positions = <2 39>;
+            timeout-ms = <2000>;
+            require-prior-idle-ms = <100>;
+        };
+        
+        // ESC button  (posições 1, 2)
+        esc_combo {
+            bindings = <&kp ESC>;
+            key-positions = <1 2>;
             timeout-ms = <2000>;
             require-prior-idle-ms = <100>;
         };
@@ -57,7 +65,7 @@
                 &none         &kp Q         &kp W             &kp E     &kp R              &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &none
                 &none         &kp A         &kp S             &kp D     &kp F              &kp G         &kp H         &kp J         &kp K         &kp L         &kp SEMI      &none
                 &none         &kp Z         &kp X             &kp C     &kp V              &kp B         &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH     &none
-                                            &mt LCTRL LGUI    &mo 1     &mt LSHFT SPACE    &kp BSPC      &mo 2         &kp LCTRL     
+                                            &mt LCTRL LGUI    &mo 1     &mt LSHFT SPACE    &kp BSPC      &kp RET       &mo 2     
             >;
         };
 

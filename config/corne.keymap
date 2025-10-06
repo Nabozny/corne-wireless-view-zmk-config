@@ -7,7 +7,7 @@
     combos {
         compatible = "zmk,combos";
         
-        // Reset Bluetooth LADO ESQUERDO - Q+W+E+R (posições 1,2,3,4 com padding)
+        // Reset Bluetooth LADO ESQUERDO - Q + W + E + R (posições 1,2,3,4 com padding)
         bt_reset_left {
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <1 2 3 4>;
@@ -15,7 +15,7 @@
             require-prior-idle-ms = <100>;
         };
         
-        // Reset Bluetooth LADO DIREITO - P+O+I+U (posições 10,9,8,7 com padding)  
+        // Reset Bluetooth LADO DIREITO - P + O + I + U (posições 10,9,8,7 com padding)  
         bt_reset_right {
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <10 9 8 7>;
@@ -23,7 +23,7 @@
             require-prior-idle-ms = <100>;
         };
 
-        // Alternar TEMPORARIAMENTE para USB - A+S+D (posições 13,14,15 com padding)
+        // Alternar TEMPORARIAMENTE para USB - A + S + D (posições 13,14,15 com padding)
         output_toggle {
             bindings = <&out OUT_TOG>;
             key-positions = <13 14 15>;
@@ -31,7 +31,7 @@
             require-prior-idle-ms = <100>;
         };
 
-        // Windows + Tab (Task View) - E+R+T (posições 3,4,5 com padding)
+        // Windows + Tab (Task View) - E + R + T (posições 3,4,5 com padding)
         win_tab_combo {
             bindings = <&kp LG(TAB)>;
             key-positions = <3 4 5>;
@@ -40,20 +40,46 @@
         };
         
         // QUESTION button - W+BSPC (posições 2, 39)
-        question_combo {
-            bindings = <&kp QMARK>;
-            key-positions = <2 39>;
+        // question_combo {
+        //     bindings = <&kp QMARK>;
+        //     key-positions = <2 39>;
+        //     timeout-ms = <2000>;
+        //     require-prior-idle-ms = <100>;
+        // };
+        
+        // ESC button - Z + X (posições 25, 26)
+        esc_combo {
+            bindings = <&kp LCTRL>;
+            key-positions = <25 26>;
             timeout-ms = <2000>;
             require-prior-idle-ms = <100>;
         };
-        
-        // ESC button - Q+W (posições 1, 2)
+
+        // ESC button - Q + W (posições 1, 2)
         esc_combo {
             bindings = <&kp ESC>;
             key-positions = <1 2>;
             timeout-ms = <2000>;
             require-prior-idle-ms = <100>;
         };
+
+        
+        // HOME - Y + U (posições 6, 7)
+        esc_combo {
+            bindings = <&kp HOME>;
+            key-positions = <6 7>;
+            timeout-ms = <2000>;
+            require-prior-idle-ms = <100>;
+        };
+
+        // END - H + J (posições 18, 19)
+        esc_combo {
+            bindings = <&kp END>;
+            key-positions = <18 19>;
+            timeout-ms = <2000>;
+            require-prior-idle-ms = <100>;
+        };
+
     };
 
     keymap {

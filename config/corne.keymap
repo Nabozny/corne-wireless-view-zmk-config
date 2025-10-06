@@ -47,8 +47,8 @@
         //     require-prior-idle-ms = <100>;
         // };
         
-        // ESC button - Z + X (posições 25, 26)
-        esc_combo {
+        // CTRL button - Z + X (posições 25, 26)
+        ctrl_combo {
             bindings = <&kp LCTRL>;
             key-positions = <25 26>;
             timeout-ms = <2000>;
@@ -65,7 +65,7 @@
 
         
         // HOME - Y + U (posições 6, 7)
-        esc_combo {
+        home_combo {
             bindings = <&kp HOME>;
             key-positions = <6 7>;
             timeout-ms = <2000>;
@@ -73,7 +73,7 @@
         };
 
         // END - H + J (posições 18, 19)
-        esc_combo {
+        end_combo {
             bindings = <&kp END>;
             key-positions = <18 19>;
             timeout-ms = <2000>;

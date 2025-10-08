@@ -1,68 +1,62 @@
 # Corne 5x3 Wireless ZMK Config
 
-Configuração personalizada para teclado Corne wireless 5x3 com layout QWERTY.
+Custom configuration for Corne 5x3 wireless keyboard with QWERTY layout.
 
-## Features
-- Layout QWERTY 5x3 
-- Numpad organizado no lado direito
-- F-keys e símbolos na segunda camada
-- Reset Bluetooth independente para cada lado
-- Controles de mídia (volume e brilho)
-- Otimizado para Windows
-
-## Combos
-- **Q+W+E+R** (lado esquerdo): Reset Bluetooth completo
-- **P+O+I+U** (lado direito): Reset Bluetooth completo  
-- **A+S+D** (lado esquerdo): Alternar temporariamente para USB
-
-## Configurações Especiais
-- **Prioridade Bluetooth**: Sempre conecta via Bluetooth por padrão
-- **Reset automático**: Limpa configurações BT ao atualizar firmware
-
-## Como usar
-1. Baixe os arquivos .uf2 compilados das GitHub Actions
-2. Conecte o teclado em modo bootloader
-3. Copie o arquivo correspondente (.uf2) para cada lado
-4. Primeira vez: faça o pairing Bluetooth (será resetado automaticamente em updates futuros)
-
-## Layout das Camadas
+## Keymap Layers
 
 ### Base Layer (QWERTY)
-```
-┌─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┐
-│  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │
-├─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┤
-│  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  ;  │
-├─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┤
-│  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │
-└─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┘
-            │NUM  │ GUI │SPACE│   │BSPC │ENTER│ SYM │
-            │     │     │SHIFT│   │     │     │     │
-            └─────┴─────┴─────┘   └─────┴─────┴─────┘
-```
+![QWERTY Layout](src/imgs/qwerty_layer.png)
 
-### Number Layer (NUM)
-```
-┌─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┐
-│     │  <  │  [  │  {  │  (  │   │  /  │  7  │  8  │  9  │  -  │
-├─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┤
-│     │  ←  │  ↓  │  ↑  │  →  │   │  *  │  4  │  5  │  6  │  +  │
-├─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┤
-│     │  >  │  ]  │  }  │  )  │   │  0  │  1  │  2  │  3  │ENTER│
-└─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┘
-            │     │     │     │   │     │     │     │
-            └─────┴─────┴─────┘   └─────┴─────┴─────┘
-```
+The base layer uses the standard QWERTY layout optimized for a 42-key keyboard.
 
-### Symbol Layer (SYM)
-```
-┌─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┐
-│ F1  │ F2  │ F3  │ F4  │ F5  │   │ F6  │ F7  │ F8  │ F9  │ F10 │
-├─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┤
-│  !  │  @  │  #  │  $  │  %  │   │  ^  │  &  │  *  │  (  │  )  │
-├─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┤
-│VOL- │VOL+ │BRI- │BRI+ │     │   │  -  │  =  │  [  │  ]  │  \  │
-└─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┘
-            │     │     │     │   │     │     │     │
-            └─────┴─────┴─────┘   └─────┴─────┴─────┘
-```
+### Numbers Layer
+![Numbers Layout](src/imgs/numbers_layer.png)
+
+This layer provides access to numbers organized as a numpad on the right side, mathematical symbols, parentheses, and navigation keys (arrows) on the left side.
+
+### Symbols Layer
+![Symbols Layout](src/imgs/symbols_layer.png)
+
+The symbols layer includes function keys (F1-F12), special characters, media controls (volume and brightness), and Bluetooth settings.
+
+## Features
+
+- QWERTY 5x3 layout 
+- Numpad organized on the right side
+- F-keys and symbols on secondary layers
+- Independent Bluetooth reset for each side
+- Media controls (volume and brightness)
+- Optimized for Windows
+
+## Special Features
+
+- **CTRL accessible on NUM layer:** Last position of thumb keys
+- **SHIFT and TAB on NUM layer:** For numeric combinations
+- **Dedicated numpad:** Right side with traditional layout
+- **Navigation:** Arrow keys on the left side of NUM layer
+- **Complete F-keys:** F1-F12 on SYM layer
+- **Symbols and parentheses:** Organized on NUM layer (left side)
+- **Media controls:** Volume and brightness on SYM layer
+
+## How to Use
+
+1. Download the compiled .uf2 files from GitHub Actions
+2. Connect the keyboard in bootloader mode
+3. Copy the corresponding .uf2 file to each side
+4. First time: pair via Bluetooth (will be reset automatically on future updates)
+
+## Special Settings
+
+- **Bluetooth Priority**: Always connects via Bluetooth by default
+- **Automatic Reset**: Clears BT settings when updating firmware
+
+## Configured Combos
+
+- **ESC**: Q + W
+- **CTRL**: Z + X  
+- **HOME**: Y + U
+- **END**: H + J
+- **Windows + Tab**: E + R + T
+- **Bluetooth Reset (Left)**: Q + W + E + R
+- **Bluetooth Reset (Right)**: P + O + I + U
+- **Toggle USB/Bluetooth**: A + S + D

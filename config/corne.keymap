@@ -80,6 +80,48 @@
             require-prior-idle-ms = <100>;
         };
 
+        // ACENTOS PORTUGUESES
+        
+            // ACENTO AGUDO (´) - I + O (posições 8, 9)
+            acute_accent_combo {
+                bindings = <&kp APOSTROPHE>;  // ' (acento agudo morto)
+                key-positions = <8 9>;
+                timeout-ms = <2000>;
+                require-prior-idle-ms = <100>;
+            };
+
+            // ACENTO CIRCUNFLEXO (^) - O + P (posições 9, 10)
+            circumflex_combo {
+                bindings = <&kp LS(N6)>;  // Shift+6 para ^
+                key-positions = <9 10>;
+                timeout-ms = <2000>;
+                require-prior-idle-ms = <100>;
+            };
+
+            // TIL (~) - U + I (posições 7, 8)
+            tilde_combo {
+                bindings = <&kp LS(GRAVE)>;  // Shift+` para ~
+                key-positions = <7 8>;
+                timeout-ms = <2000>;
+                require-prior-idle-ms = <100>;
+            };
+
+            // ACENTO GRAVE (`) - K + L (posições 20, 21)
+            grave_accent_combo {
+                bindings = <&kp GRAVE>;  // ` (acento grave)
+                key-positions = <20 21>;
+                timeout-ms = <2000>;
+                require-prior-idle-ms = <100>;
+            };
+
+            // CEDILHA (ç) - M + COMMA (posições 31, 32)
+            cedilla_combo {
+                bindings = <&kp RA(COMMA)>;  // Alt+, para ç direto
+                key-positions = <31 32>;
+                timeout-ms = <2000>;
+                require-prior-idle-ms = <100>;
+            };
+
     };
 
     keymap {

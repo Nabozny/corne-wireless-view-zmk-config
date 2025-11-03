@@ -39,13 +39,13 @@
             require-prior-idle-ms = <100>;
         };
         
-        // QUESTION button - W+BSPC (posições 2, 39)
-        // question_combo {
-        //     bindings = <&kp QMARK>;
-        //     key-positions = <2 39>;
-        //     timeout-ms = <2000>;
-        //     require-prior-idle-ms = <100>;
-        // };
+        // Open Teriminal in code - / + . + T (posições 34, 33, 5)
+        terminal_code_combo {
+            bindings = <&kp LC(LS(GRAVE))>;
+            key-positions = <34 33 5>;
+            timeout-ms = <2000>;
+            require-prior-idle-ms = <100>;
+        };
         
         // CTRL button - Z + X (posições 25, 26)
         ctrl_combo {

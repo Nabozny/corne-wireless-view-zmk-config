@@ -80,57 +80,6 @@
             require-prior-idle-ms = <100>;
         };
 
-        // DELETE - SHIFT + BACKSPACE (posições 38 + 39)
-        shift_backspace_combo {
-            bindings = <&kp DELETE>;
-            key-positions = <38 39>;
-            timeout-ms = <2000>;
-            require-prior-idle-ms = <50>;
-            layers = <0>;
-        };
-        
-
-        // ACENTOS PORTUGUESES
-        
-            // ACENTO AGUDO (´) - I + O (posições 8, 9)
-            acute_accent_combo {
-                bindings = <&kp APOSTROPHE>;
-                key-positions = <8 9>;
-                timeout-ms = <2000>;
-                require-prior-idle-ms = <100>;
-            };
-
-            // ACENTO CIRCUNFLEXO (^) - O + P (posições 9, 10)
-            circumflex_combo {
-                bindings = <&kp LS(N6)>;
-                key-positions = <9 10>;
-                timeout-ms = <2000>;
-                require-prior-idle-ms = <100>;
-            };
-
-            // TIL (~) - U + I (posições 7, 8)
-            tilde_combo {
-                bindings = <&kp LS(GRAVE)>;
-                key-positions = <7 8>;
-                timeout-ms = <2000>;
-                require-prior-idle-ms = <100>;
-            };
-
-            // ACENTO GRAVE (`) - K + L (posições 20, 21)
-            grave_accent_combo {
-                bindings = <&kp GRAVE>;
-                key-positions = <20 21>;
-                timeout-ms = <2000>;
-                require-prior-idle-ms = <100>;
-            };
-
-            // CEDILHA (ç) - M + COMMA (posições 31, 32)
-            cedilla_combo {
-                bindings = <&kp RA(COMMA)>;
-                key-positions = <31 32>;
-                timeout-ms = <2000>;
-                require-prior-idle-ms = <100>;
-            };
     };    
     
     keymap {
@@ -152,7 +101,7 @@
                 &none   &kp SQT    &kp UP     &none       &kp LPAR   &kp RPAR   &kp KP_SLASH   &kp N7      &kp N8      &kp N9   &kp MINUS   &none
                 &none   &kp LEFT   &kp DOWN   &kp RIGHT   &kp LBKT   &kp RBKT   &kp STAR       &kp N4      &kp N5      &kp N6   &kp PLUS    &none
                 &none   &none      &none      &none       &kp LBRC   &kp RBRC   &kp N0         &kp N1      &kp N2      &kp N3   &kp EQUAL   &none
-                                              &none       &kp TAB    &none      &kp RET        &kp LSHFT   &kp LCTRL   
+                                              &none       &kp TAB    &none      &kp DELETE     &kp LSHFT   &kp LCTRL   
             >;
         };
 
